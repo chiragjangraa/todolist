@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef2f3;
+      padding: 30px;
+      color: #444;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .toolbar,
+    .input-form,
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    input {
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      width: 180px;
+    }
+
+    button {
+      padding: 12px 18px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #products {
+      max-width: 800px;
+      margin: 30px auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 20px;
+      border-left: 6px solid #0077cc;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Product Dashboard</h1>
+
+  <div class="actions">
+    <button onclick="fetchProducts()">View All Products</button>
+  </div>
+  <br>
+
+  <div class="toolbar">
+    <input type="text" id="searchInput" placeholder="Find a product..." />
+    <button onclick="searchProduct()">Search</button>
+  </div>
+<br>
+  <div class="input-form">
+    <input type="text" id="name" placeholder="Enter name" />
+    <input type="number" id="price" placeholder="Enter price" />
+    <input type="text" id="category" placeholder="Enter category" />
+    <button onclick="addProduct()">Add Item</button>
+  </div>
+
+  <div id="products"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
